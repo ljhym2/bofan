@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提示</title>
+    <!-- uniapp -->
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <!-- uniapp -->
+
+    <!-- 微信 -->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <!-- 微信 -->
+
+    <!-- 百度 -->
+    <script type="text/javascript" src="https://b.bdstatic.com/searchbox/icms/searchbox/js/swan-2.0.22.js"></script>
+    <!-- 百度 -->
+
+    <script src="./public/jquery.min.js"></script>
+
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* 弹框 */
+    .zzc1 {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .5);
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        font-size: 13px;
+        /* display: none; */
+        text-align: center;
+    }
+
+
+    .baibox {
+        width: 80%;
+        max-width: 300px;
+        height: max-content;
+        background-color: #fff;
+        border-radius: 0.2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+
+
+    .deldiatitle {
+        height: 45px;
+        font-size: 15px;
+        line-height: 45px;
+        border-bottom: 0.02rem solid #f0f0ff;
+    }
+
+    .deldiacont {
+        min-height: 75px;
+        padding-top: 20px;
+    }
+
+    .delbtn {
+        height: 45px;
+        border-top: 0.02rem solid #f0f0ff;
+    }
+
+    .delbtn1 {
+        display: inline-block;
+        height: 100%;
+        width: 49%;
+        line-height: 45px;
+        font-weight: 700;
+    }
+
+    .delbtn2 {
+        border-left: 0.02rem solid #f0f0ff;
+        color: #00cccc;
+    }
+
+    /* 弹框 */
+</style>
+<body>
+    <div class="zzc1">
+        <div class="baibox">
+            <div class="deldiatitle">提示</div>
+            <div class="deldiacont">登录过期，刷新页面</div>
+            <div class="delbtn">
+                <span class="delbtn1 btn1">取消</span>
+                <span class="delbtn1 delbtn2">确定</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function () {
+        $('.btn1').click(function () {
+            console.log('取消')
+            shuaxin()
+        })
+        $('.delbtn2').click(function () {
+            console.log('确定')
+            buyvip()
+        })
+    })
+
+    function fhui() {
+        history.back()
+        // uniapp跳转
+        uni.navigateBack({
+            delta: 1
+        });
+
+        // 微信小程序跳转
+        wx.miniProgram.navigateBack({
+            delta: 1
+        });
+
+        // 百度小程序跳转
+        swan.webView.navigateBack({
+            delta: 1
+        });
+    }
+
+    function shuaxin() {
+        // uniapp跳转
+        uni.navigateTo({
+            url: '/pages/bofang/bofang?id=212'
+        })
+        // uniapp跳转
+
+        // 百度小程序跳转
+        swan.webView.navigateTo({
+            url: '/pages/bofang/bofang?id=212'
+        })
+        // 百度小程序跳转
+
+        // 微信小程序跳转
+        wx.miniProgram.navigateTo({
+            url: '/pages/bofang/bofang?id=212'
+        })
+        // 微信小程序跳转
+
+    }
+
+    function buyvip() {
+        console.log('购买vip')
+        // uniapp跳转
+        uni.navigateTo({
+            url: '/pages/buyvip/buyvip'
+        })
+        // uniapp跳转
+
+        // 百度小程序跳转
+        swan.webView.navigateTo({
+            url: '/pages/buyvip/buyvip'
+        })
+        // 百度小程序跳转
+
+        // 微信小程序跳转
+        wx.miniProgram.navigateTo({
+            url: '/pages/buyvip/buyvip'
+        })
+        // 微信小程序跳转
+
+    }
+</script>
+
+
+</html>
