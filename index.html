@@ -1,0 +1,2638 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" style="background: rgb(255, 255, 255);">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+
+	<meta name="applicable-device" content="pc,mobile">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<link rel="stylesheet" type="text/css" href="./public/materialize.min.1126.css">
+
+	<script src="./public/js/NoSleep.min.js"></script>
+	<script>
+		var noSleep = new NoSleep();
+		noSleep.enable(); // keep the screen on!
+	</script>
+
+
+	<style>
+		/* fontSizeLyric */
+		@font-face {
+			/* font-family: 'puhuiti';
+			src: url('./public/fonts/AlibabaPuHuiTi-2-75-SemiBoldJ.woff') format('woff'),
+				url('./public/fonts/AlibabaPuHuiTi-2-75-SemiBoldJ.ttf') format('TrueType');
+			font-weight: normal;
+			font-style: normal; */
+		}
+
+		.hexiantupian {
+			transform: scale(1.5);
+		}
+
+		.stycolor {
+			color: #00cccc;
+		}
+
+		.stybgc {
+			background-color: #00cccc !important;
+		}
+
+		.stycolor2 {
+			color: #ebfbf9;
+		}
+
+		.stybgc2 {
+			background-color: #ebfbf9;
+		}
+
+		.colorfff {
+			color: #fff !important;
+		}
+
+		.input-field label {
+			color: #00cccc;
+		}
+
+		.newTips {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			color: #999;
+			font-size: 15px;
+			bottom: 0px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			padding: 10px;
+		}
+
+		.icon-spinner {
+			-webkit-animation: changeright 2s linear infinite;
+			/* transform-origin: 50% 50%; */
+		}
+
+		@-webkit-keyframes changeright {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+
+			50% {
+				-webkit-transform: rotate(180deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+
+		/* 
+        body {
+            overflow-y: scroll !important;
+        } */
+		/* 新增 */
+
+
+		.showhide {
+			display: flex;
+		}
+
+		.delfix {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			background-color: rgba(0, 0, 0, .5);
+			display: none;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.delbox {
+			width: 70%;
+			height: max-content;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+
+		.del-title {
+			width: 100%;
+			height: 40px;
+			border-bottom: 1px solid #f0f0f0;
+			text-align: center;
+			line-height: 40px;
+		}
+
+		.del-cont {
+			width: 100%;
+			min-height: 70px;
+			padding: 10px;
+		}
+
+		.del-btn2 {
+			width: 100%;
+			height: 45px;
+			display: flex;
+			border-top: 1px solid #f0f0f0;
+
+		}
+
+		.delbtns1 {
+			border-right: 1px solid #f0f0f0;
+		}
+
+		.delbtns {
+			flex: 1;
+			line-height: 45px;
+			text-align: center;
+		}
+
+		/* 新增 */
+
+		/* 9.1 */
+		.logos {
+			/* width: 35px; */
+			height: 30px;
+			position: absolute;
+			left: 60px;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			/* border-radius: 35px; */
+			/* background-color: #fff; */
+		}
+
+		@media screen and (min-width: 10px) and (max-width: 700px) {
+
+			/* //当屏幕最大980时，执行下面css */
+			.logos {
+				left: 0;
+				right: 0;
+			}
+		}
+
+		.newbtnbox {
+			position: absolute;
+			right: 15px;
+			top: 60px;
+			z-index: 10;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-radius: 999px;
+			overflow: hidden;
+		}
+
+		.newbjbtn {
+			flex: 1;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			padding: 5px 10px;
+		}
+
+		.btn1 {
+			background-color: #ebfbf9;
+			color: #00cccc;
+		}
+
+		.btn2 {
+			background-color: #00cccc;
+			color: #fff;
+		}
+
+		@media screen and (min-width: 320px) and (max-width: 413px) {
+			.newbtnbox {
+				width: max-content;
+				height: 20px;
+			}
+		}
+
+
+		@media screen and (min-width: 800px) {
+			.newbjbtn {
+				padding: 4px 15px;
+				font-size: 16px;
+			}
+		}
+
+		#history {
+			height: 50vh;
+			padding: 20px;
+		}
+
+		.hisitem {
+			width: 100%;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid #f0f0f0;
+		}
+
+		.hisname {
+			color: #00cccc;
+		}
+
+		.histime {
+			color: #ccc;
+		}
+
+		.hismore {
+			background-color: #00cccc;
+			color: #fff;
+			font-size: 14px;
+			padding: 2px 10px;
+			border-radius: 999px;
+			text-align: center;
+			width: max-content;
+			margin: 20px auto;
+			display: block;
+		}
+
+		@media screen and (min-width: 800px) {
+			.hisitem {
+				font-size: 16px;
+				height: 50px;
+			}
+
+			.hismore {
+				padding: 5px 20px;
+
+				font-size: 16px;
+			}
+		}
+
+		/* 9.1 */
+
+
+		.newbtnbox2 {
+			left: 15px;
+			width: max-content;
+		}
+
+		.btn3 {
+			background-color: #ebfbf9;
+			color: #00cccc;
+		}
+
+		/* 9.22 */
+
+
+		/* 下载弹框 */
+		.xiazaozzc {
+			top: 0;
+			left: 0;
+			position: fixed;
+			z-index: 999999;
+			background-color: rgba(0, 0, 0, 0.5);
+			width: 100%;
+			height: 100%;
+			display: none;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.xzbox {
+			width: 80%;
+			max-width: 500px;
+			height: max-content;
+			position: relative;
+			background-color: #fff;
+			border-radius: 2.5px;
+			padding-bottom: 15px;
+		}
+
+		.topxz {
+			width: 100%;
+			height: 80px;
+		}
+
+		.xztitle {
+			font-size: 19px;
+			font-weight: 700;
+			text-align: center;
+			width: 100%;
+			color: #333;
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+
+		.xztips {
+			line-height: 20px;
+			display: block;
+			font-size: 13px;
+			color: #333;
+			padding: 0 15px;
+		}
+
+		.xiazaibtn {
+			width: 175px;
+			height: 35px;
+			background-image: linear-gradient(to right, rgba(108, 221, 199), rgba(27, 191, 159));
+			/* background-color: #00cccc; */
+			color: #fff;
+			font-size: 13px;
+			line-height: 35px;
+			text-align: center;
+			display: block;
+			margin: 20px auto 15px;
+		}
+
+		.clobai {
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+
+		/* 下载弹框 */
+		button {
+			outline: none;
+			border: none;
+		}
+
+		/* 9.22 */
+
+		/* 9.26 */
+		.bofangsvg {
+			width: 100%;
+			height: 100vh;
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 101;
+			display: block;
+		}
+
+		#beforesgv {
+			display: none;
+		}
+
+		.svgimg {
+			width: 100%;
+			min-height: 100vh;
+		}
+
+		/* 悬浮按钮 */
+		.fixbtn {
+			position: fixed;
+			width: 40px;
+			/* background-color: #000; */
+			right: 20px;
+			bottom: 50px;
+			z-index: 100;
+			border-radius: 999px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 10px 0;
+			background-color: #fff;
+			box-shadow: 0 0 10px #ccc;
+		}
+
+		.fixbtncha {
+			position: absolute;
+			top: -25px;
+			background-color: #fff;
+			box-shadow: 0 0 10px #ccc;
+			border-radius: 999px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.at-cursor-beat {
+			background: #cd5c5c;
+			width: 2px;
+		}
+
+		.fixbtncha img {
+			width: 12px;
+			height: 12px;
+		}
+
+		.btnfour {
+			width: 35px;
+			min-height: 35px;
+			background-color: #fff;
+			border-radius: 999px;
+			margin-bottom: 10px;
+			font-size: 12px;
+			text-align: center;
+		}
+
+		.fourimg {
+			width: 20px;
+			vertical-align: middle;
+		}
+
+		.fixbtn .btnfour:nth-last-child(1) {
+			margin: 0;
+		}
+
+		.morefixbtn {
+			width: 20px;
+			height: 20px;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			bottom: 50px;
+			z-index: 100;
+			right: 10px;
+			box-shadow: 0 0 10px #ccc;
+			border-radius: 999px;
+		}
+
+		.morefixbtn img {
+			width: 12px;
+			height: 12px;
+		}
+
+		@media screen and (min-width: 800px) {
+			.morefixbtn {
+				width: 30px;
+				height: 30px;
+				display: none;
+				align-items: center;
+				justify-content: center;
+				position: fixed;
+				bottom: 50px;
+				z-index: 100;
+				right: 10px;
+				box-shadow: 0 0 10px #ccc;
+				border-radius: 999px;
+			}
+
+			.morefixbtn img {
+				width: 22px;
+				height: 22px;
+			}
+		}
+
+		/* 悬浮按钮 */
+		/* 9.26 */
+
+		.hexiantupian {
+			transform: scale(1.5);
+		}
+
+		/* #materialize-lean-overlay-1 {
+            width: 0 !important;
+            height: 0 !important;
+        } */
+		.stycolor {
+			color: #00cccc;
+		}
+
+		.stybgc {
+			background-color: #00cccc !important;
+		}
+
+		.stycolor2 {
+			color: #ebfbf9;
+		}
+
+		.stybgc2 {
+			background-color: #ebfbf9;
+		}
+
+		.colorfff {
+			color: #fff !important;
+		}
+
+		.input-field label {
+			color: #00cccc;
+		}
+
+		.newTips {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			color: #999;
+			font-size: 15px;
+			bottom: 0px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			padding: 10px;
+		}
+
+		.icon-spinner {
+			-webkit-animation: changeright 2s linear infinite;
+			/* transform-origin: 50% 50%; */
+		}
+
+		@-webkit-keyframes changeright {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+
+			50% {
+				-webkit-transform: rotate(180deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+
+		/* 
+        body {
+            overflow-y: scroll !important;
+        } */
+		/* 新增 */
+		.showhide {
+			display: flex;
+		}
+
+		.delfix {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 100;
+			background-color: rgba(0, 0, 0, .5);
+			display: none;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.delbox {
+			width: 70%;
+			height: max-content;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+
+		.del-title {
+			width: 100%;
+			height: 40px;
+			border-bottom: 1px solid #f0f0f0;
+			text-align: center;
+			line-height: 40px;
+		}
+
+		.del-cont {
+			width: 100%;
+			min-height: 70px;
+			padding: 10px;
+		}
+
+		.del-btn2 {
+			width: 100%;
+			height: 45px;
+			display: flex;
+			border-top: 1px solid #f0f0f0;
+
+		}
+
+		.delbtns1 {
+			border-right: 1px solid #f0f0f0;
+		}
+
+		.delbtns {
+			flex: 1;
+			line-height: 45px;
+			text-align: center;
+		}
+
+		/* 新增 */
+
+		/* 9.1 */
+		.logos {
+			/* width: 35px; */
+			height: 30px;
+			position: absolute;
+			left: 60px;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			/* border-radius: 35px; */
+			/* background-color: #fff; */
+		}
+
+		@media screen and (min-width: 10px) and (max-width: 700px) {
+
+			/* //当屏幕最大980时，执行下面css */
+			.logos {
+				left: 0;
+				right: 0;
+			}
+		}
+
+		.newbtnbox {
+			position: absolute;
+			right: 15px;
+			top: 60px;
+			z-index: 10;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-radius: 999px;
+			overflow: hidden;
+		}
+
+		.newbjbtn {
+			flex: 1;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			padding: 5px 10px;
+		}
+
+		.btn1 {
+			background-color: #ebfbf9;
+			color: #00cccc;
+		}
+
+		.btn2 {
+			background-color: #00cccc;
+			color: #fff;
+		}
+
+		@media screen and (min-width: 320px) and (max-width: 413px) {
+			.newbtnbox {
+				width: max-content;
+				height: 20px;
+			}
+		}
+
+
+		@media screen and (min-width: 800px) {
+			.newbjbtn {
+				padding: 4px 15px;
+				font-size: 16px;
+			}
+		}
+
+		#history {
+			height: 50vh;
+			padding: 20px;
+		}
+
+		.hisitem {
+			width: 100%;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid #f0f0f0;
+		}
+
+		.hisname {
+			color: #00cccc;
+		}
+
+		.histime {
+			color: #ccc;
+		}
+
+		.hismore {
+			background-color: #00cccc;
+			color: #fff;
+			font-size: 14px;
+			padding: 2px 10px;
+			border-radius: 999px;
+			text-align: center;
+			width: max-content;
+			margin: 20px auto;
+			display: block;
+		}
+
+		@media screen and (min-width: 800px) {
+			.hisitem {
+				font-size: 16px;
+				height: 50px;
+			}
+
+			.hismore {
+				padding: 5px 20px;
+
+				font-size: 16px;
+			}
+		}
+
+		/* 9.1 */
+
+
+		.newbtnbox2 {
+			left: 15px;
+			width: max-content;
+		}
+
+		.btn3 {
+			background-color: #ebfbf9;
+			color: #00cccc;
+		}
+
+		/* 9.22 */
+
+
+		/* 下载弹框 */
+		.xiazaozzc {
+			top: 0;
+			left: 0;
+			position: fixed;
+			z-index: 999999;
+			background-color: rgba(0, 0, 0, 0.5);
+			width: 100%;
+			height: 100%;
+			display: none;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.xzbox {
+			width: 80%;
+			max-width: 500px;
+			height: max-content;
+			position: relative;
+			background-color: #fff;
+			border-radius: 2.5px;
+			padding-bottom: 15px;
+		}
+
+		.topxz {
+			width: 100%;
+			height: 80px;
+		}
+
+		.xztitle {
+			font-size: 19px;
+			font-weight: 700;
+			text-align: center;
+			width: 100%;
+			color: #333;
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+
+		.xztips {
+			line-height: 20px;
+			display: block;
+			font-size: 13px;
+			color: #333;
+			padding: 0 15px;
+		}
+
+		.xiazaibtn {
+			width: 175px;
+			height: 35px;
+			background-image: linear-gradient(to right, rgba(108, 221, 199), rgba(27, 191, 159));
+			/* background-color: #00cccc; */
+			color: #fff;
+			font-size: 13px;
+			line-height: 35px;
+			text-align: center;
+			display: block;
+			margin: 20px auto 15px;
+		}
+
+		.clobai {
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+
+		/* 下载弹框 */
+		button {
+			outline: none;
+			border: none;
+		}
+
+		/* 9.22 */
+
+		/* 9.26 */
+		.bofangsvg {
+			width: 100%;
+			height: 100vh;
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 101;
+			display: block;
+		}
+
+		#beforesgv {
+			display: none;
+		}
+
+		.svgimg {
+			width: 100%;
+			min-height: 100vh;
+		}
+
+		/* 悬浮按钮 */
+		.fixbtn {
+			position: fixed;
+			width: 40px;
+			/* background-color: #000; */
+			right: 20px;
+			bottom: 50px;
+			z-index: 100;
+			border-radius: 999px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 10px 0;
+			background-color: #fff;
+			box-shadow: 0 0 10px #ccc;
+		}
+
+		.fixbtncha {
+			position: absolute;
+			top: -25px;
+			background-color: #fff;
+			box-shadow: 0 0 10px #ccc;
+			border-radius: 999px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.at-cursor-beat {
+			background: #cd5c5c;
+			width: 2px;
+		}
+
+		.fixbtncha img {
+			width: 12px;
+			height: 12px;
+		}
+
+		.btnfour {
+			width: 35px;
+			min-height: 35px;
+			background-color: #fff;
+			border-radius: 999px;
+			margin-bottom: 10px;
+			font-size: 12px;
+			text-align: center;
+		}
+
+		.fourimg {
+			width: 20px;
+			vertical-align: middle;
+		}
+
+		.fixbtn .btnfour:nth-last-child(1) {
+			margin: 0;
+		}
+
+		.morefixbtn {
+			width: 20px;
+			height: 20px;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			bottom: 50px;
+			z-index: 100;
+			right: 10px;
+			box-shadow: 0 0 10px #ccc;
+			border-radius: 999px;
+		}
+
+		.morefixbtn img {
+			width: 12px;
+			height: 12px;
+		}
+
+		@media screen and (min-width: 800px) {
+			.morefixbtn {
+				width: 30px;
+				height: 30px;
+				display: none;
+				align-items: center;
+				justify-content: center;
+				position: fixed;
+				bottom: 50px;
+				z-index: 100;
+				right: 10px;
+				box-shadow: 0 0 10px #ccc;
+				border-radius: 999px;
+			}
+
+			.morefixbtn img {
+				width: 22px;
+				height: 22px;
+			}
+		}
+
+		/* 悬浮按钮 */
+		/* 9.26 */
+
+		.fixbtncha {
+			padding: 3px;
+		}
+
+		.fixbtnchaguanbi {
+			display: inline-block;
+			background: url(./image/splie.png) no-repeat;
+			background-size: auto 100%;
+			height: 20px;
+		}
+
+		.size1 {
+			width: 100%;
+			height: 100%;
+			background-position: -77.5px 0px;
+		}
+
+		.size2 {
+			background-position: 0px 0px;
+		}
+
+		.size3 {
+			background-position: -21px 0px;
+		}
+
+		.size4 {
+			background-position: -43px 0px;
+		}
+
+		.size5 {
+			background-position: -66.3px 0px;
+		}
+
+		.size6 {
+			background-position: -62px 0px;
+			width: 14px;
+			height: 14px;
+		}
+
+		.size7 {
+			background-position: -146px 0px;
+			width: 22px;
+			height: 22px;
+		}
+	</style>
+	<style>
+		hexi-tab,
+		hexi-rhythm {
+			overflow-x: scroll;
+			display: block !important;
+			-ms-overflow-style: -ms-autohiding-scrollbar
+		}
+
+		hexi-tab::-webkit-scrollbar,
+		hexi-rhythm::-webkit-scrollbar {
+			display: none
+		}
+
+		.editor-title {
+			position: absolute;
+			top: 50px;
+			left: 20px;
+			width: 85px;
+			color: white;
+			flex-direction: column;
+			margin: 0;
+			font-size: 14px;
+			line-height: 40px;
+			z-index: 999;
+			display: none;
+			box-shadow: 0 0 10px #ccc;
+		}
+
+		a.btnitems {
+			margin-top: 0px;
+			background-color: rgb(255, 255, 255);
+			min-width: 60px;
+			text-decoration: none;
+			color: #00cccc;
+			height: 35px;
+			line-height: 35px;
+			padding: 0px 10px;
+		}
+	</style>
+
+</head>
+
+<!-- 插件ui -->
+<script src="./public/js/layer.js"></script>
+<script src="./public/jquery.min.js"></script>
+<!-- 插件ui -->
+
+
+<script>
+	function loadScriptString(src, callback) {
+		var script = document.createElement("script"); //创建一个script标签
+		script.type = "text/javascript";
+		script.src = src
+		document.getElementsByTagName('head')[0].appendChild(script);
+		script.onload = script.onreadystatechange = function () {
+			if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+				callback()
+				script.onload = script.onreadystatechange = null;
+			}
+		};
+	}
+	window.loadScriptString = loadScriptString
+</script>
+
+<body>
+
+	<!-- 吉他 -->
+	<div style="position: fixed;right: 99999999px;top: 0;" id="initjitasvg">
+
+	</div>
+	<!-- 吉他 -->
+	<!-- 顶部  -->
+	<div style="position: fixed;right: 99999999px;top: 0;" id="linesvg">
+		<!-- <hexi-tab line-num="31" scale="1" string-num="6" num="@F             G
+		|------------|------------|
+		|---------x--|---------x--|
+		|----x-----x-|----x-----x-|
+		|---x--------|------------|
+		|------------|------------|
+		|------------|---x--------|
+		%-- -- -- --  -- -- -- --
+		
+		@C            
+		|------x-----|------------|
+		|---x-----x--|------------|
+		|-x--x--x--x-|------------|
+		|------------|------------|
+		|x-----------|------------|
+		|------------|------------|
+		%-- -- -- --"></hexi-tab> -->
+	</div>
+	<!-- 顶部  -->
+
+	<!-- 底部 -->
+	<div style="position: fixed;right: 99999999px;top: 0;" id="linebottomsvg">
+		<!-- <hexi-rhythm string-num="6" line-num="4" scale="1" num="(5 3) (2 3) (1 3) (2 3)"></hexi-rhythm>
+		<hexi-rhythm string-num="6" line-num="4" scale="1" num="(5 3) (2 3) (1 3) (2 3)"></hexi-rhythm>
+		<hexi-rhythm string-num="6" line-num="4" scale="1" num="(5 3) (2 3) (1 3) (2 3)"></hexi-rhythm> -->
+	</div>
+	<!-- 顶部  -->
+
+
+
+	<div class="bofangsvg">
+		<img src="./image/bofang.svg" class="svgimg" alt="">
+	</div>
+
+
+
+	<div class="xiazaozzc gbvipxiazai">
+		<div class="xzbox">
+			<!-- <img mode="aspectFill" src="../../images/clobai.png" class="clobai" /> -->
+
+			<img mode="aspectFill" src="" class="topxz" />
+
+			<div class="xztitle">vip专享功能</div>
+			<!-- <div class="xztips">vip专享功能</div> -->
+			<div class="xiazaibtn">下载</div>
+			<!-- <div class="xiazaibtn">PDF下载</div> -->
+		</div>
+	</div>
+
+	<div id="preload" class="progress" style="display: none;">
+		<div class="indeterminate noprint"></div>
+	</div>
+
+
+	<div id="beforesgv">
+
+
+
+
+		<!-- 悬浮按钮 -->
+		<div class="fixbtn">
+			<div class="fixbtncha">
+				<div class="fixbtnchaguanbi size1"></div>
+			</div>
+			<div class="btnfour yanzou">
+				<!-- src="./image/bofang.png" alt="" -->
+				<div class="fourimg fixbtnchaguanbi size2"></div>
+				<div>演奏</div>
+			</div>
+			<div class="btnfour daying">
+				<!-- <img class="fourimg" src="./image/daying.png" alt=""> -->
+				<div class="fourimg fixbtnchaguanbi size3"></div>
+				<div>打印</div>
+			</div>
+			<div class="btnfour gqxz">
+				<!-- <img class="fourimg" src="./image/xiazai.png" alt=""> -->
+				<div class="fourimg fixbtnchaguanbi size4"></div>
+				<div>下载</div>
+			</div>
+			<div class="btnfour tupu">
+				<div class="fourimg fixbtnchaguanbi size5"></div>
+				<div>图谱</div>
+			</div>
+
+			<div class="btnfour hongbao">
+				<div class="fourimg fixbtnchaguanbi size7"></div>
+				<div>红包</div>
+			</div>
+
+		</div>
+
+		<div class="morefixbtn">
+			<!-- <img src="./image/morebtn.png" alt=""> -->
+			<div class="fourimg fixbtnchaguanbi size6"></div>
+		</div>
+		<!-- 悬浮按钮 -->
+
+
+		<div id="header" class="common-header hidden noprint" style="background: #00cccc; display: block;">
+
+			<!-- icon-cross -->
+			<i id="back-btn" class="icon-menu left-icon noprint"></i>
+			<div class="editor-title">
+				<a class="navuls1 btnitems">返回首页</a>
+				<a class="navuls2 btnitems">搜索更多</a>
+				<a class="navuls3 btnitems">留言反馈</a>
+			</div>
+
+			<!-- icon-play3 icon-arrow-left2 -->
+
+			<img class="logos" src="./logo.png" alt="">
+
+
+
+			<i id="menu-btn" class="icon-play3 right-icon noprint"></i>
+
+
+
+		</div>
+		<!-- <label href="#" class="newbjbtn btn3">
+						吉他指法
+					</label> -->
+
+		<div class="newbtnbox newbtnbox2" style="display: flex;">
+			<select id="jitasvelte"
+				style="padding: 0;line-height: 20px;font-size: 12px;display: block;width: 66px;height: 100%;">
+
+			</select>
+			<div id="bdjia" style="font-size: 12px;margin-left: 5px;"></div>
+		</div>
+
+		<!-- <div class="input-field col select-div s4 m3">
+					<label class="active" for="jitasvelte">吉他指法</label>
+					<select id="jitasvelte" class="metronome-select browser-default">
+
+					</select>
+				</div> -->
+
+
+		<div class="newbtnbox">
+
+			<a href="#" class="newbjbtn btn2">
+				在线编辑
+			</a>
+			<a href="#" class="newbjbtn btn1">
+				历史编辑
+			</a>
+
+		</div>
+
+	</div>
+
+	<div id="history" class="modal" style="display: none;">
+		<a href="#" class="hisitem">
+			<div class="hisname">苍强曲谱</div>
+			<div class="histime">2021-09-01</div>
+		</a>
+
+		<a href="#" class="hismore">加载更多</a>
+	</div>
+
+	<!-- 新增 -->
+	<!-- <div class="delfix">
+			<div class="delbox">
+				<div class="del-title">删除作品</div>
+
+				<div class="del-cont">
+					确定删除该作品吗？
+				</div>
+
+				<div class="del-btn2">
+					<div class="delbtns delbtns1">取消</div>
+					<div class="delbtns delsure">确定</div>
+				</div>
+			</div>
+		</div> -->
+	<!-- 新增 -->
+
+	<div id="sheet" class="noprint" style="height: 2087.56px; transform: scale(1);">
+
+
+
+	</div>
+
+	<canvas style="height: 0;" id="canvas"></canvas>
+
+	<div id="foot" style="color: rgb(27, 27, 27);">
+
+		<div id="media-wrapper" class="noprint"></div>
+
+		<div id="comment-wrapper" class="noprint">
+			<ul class="comment-list">
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="count-down-area">
+		<p class="stybgc colorfff">4</p>
+	</div>
+
+
+	<div id="menu-modal" class="modal"
+		style="z-index: 1003; display: none; opacity: 0; transform: scaleX(0.7); top: 0px;">
+		<ul class="menu">
+
+
+			<li id="play-li"><i id="play-btn" class="icon-play3 stycolor" title="播放"></i>
+				<p id="play-btn-label">播放</p>
+			</li>
+			<li id="instruments-li" class="modal-close"><i class="icon-cog stycolor"></i>
+				<p>显示设置</p>
+			</li>
+			<li id="metronome-li" class="modal-close"><i class="icon-clock stycolor"></i>
+				<p>节拍器</p>
+			</li>
+			<li id="copy-li" class="modal-close"><i class="icon-link stycolor"></i>
+				<p>复制链接</p>
+			</li>
+
+
+		</ul>
+		<div class="newTips">提示：必须更新最新版本软件，否则只能复制链接去浏览器试听</div>
+	</div>
+
+	<div id="play-modal" class="modal modal-fixed-footer"
+		style="z-index: 1005; display: none; opacity: 0; transform: scaleX(0.7); top: 4%;">
+		<div class="modal-content">
+			<div class="row">
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="play_speed">拍数/分钟</label>
+					<select id="play_speed" class="metronome-select browser-default">
+
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="play_loop">循环播放</label>
+					<select id="play_loop" class="metronome-select browser-default">
+						<option value="on">开</option>
+						<option value="off" selected="">关</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="play_metronome">节拍器</label>
+					<select id="play_metronome" class="metronome-select browser-default">
+						<option value="on" selected="">开</option>
+						<option value="off">关</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="play_note">主旋律</label>
+					<select id="play_note" class="metronome-select browser-default">
+						<option value="on" selected="">开</option>
+						<option value="off">关</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="play-chord-name-div">
+					<label class="active" for="play_chord">和弦伴奏</label>
+					<select id="play_chord" class="metronome-select browser-default">
+						<option value="on" selected="">开</option>
+						<option value="off">关</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="play-microphone-row">
+					<label class="active" for="play_microphone">麦克风</label>
+					<select id="play_microphone" class="metronome-select browser-default">
+						<option value="0" selected="">关</option>
+						<option value="0.1">10%</option>
+						<option value="0.2">20%</option>
+						<option value="0.3">30%</option>
+						<option value="0.4">40%</option>
+						<option value="0.5">50%</option>
+						<option value="0.6">60%</option>
+						<option value="0.7">70%</option>
+						<option value="0.8">80%</option>
+						<option value="0.9">90%</option>
+						<option value="1">100%</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="play_transpose">移调</label>
+					<select id="play_transpose" class="metronome-select browser-default">
+						<option value="-12">-12半音</option>
+						<option value="-11">-11半音</option>
+						<option value="-10">-10半音</option>
+						<option value="-9">-9半音</option>
+						<option value="-8">-8半音</option>
+						<option value="-7">-7半音</option>
+						<option value="-6">-6半音</option>
+						<option value="-5">-5半音</option>
+						<option value="-4">-4半音</option>
+						<option value="-3">-3半音</option>
+						<option value="-2">-2半音</option>
+						<option value="-1">-1半音</option>
+						<option value="0" selected="">关</option>
+						<option value="1">+1半音</option>
+						<option value="2">+2半音</option>
+						<option value="3">+3半音</option>
+						<option value="4">+4半音</option>
+						<option value="5">+5半音</option>
+						<option value="6">+6半音</option>
+						<option value="7">+7半音</option>
+						<option value="8">+8半音</option>
+						<option value="9">+9半音</option>
+						<option value="10">+10半音</option>
+						<option value="11">+11半音</option>
+						<option value="12">+12半音</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="play-music-name-div">
+					<label class="active" for="play_music">声音</label>
+					<select id="play_music" class="metronome-select browser-default">
+						<option value="violin">小提琴</option>
+						<option value="piano">钢琴</option>
+						<option value="test">无声音</option>
+					</select>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="modal-footer">
+			<a href="javascript:void(0)"
+				class="modal-action modal-close waves-effect waves-green btn-flat op-replay start-play-1 stybgc colorfff">开始</a>
+			<a style="margin-left:10px;display: none;" href="javascript:void(0)"
+				class="modal-action modal-close waves-effect waves-green btn-flat op-replay start-play-2 stybgc colorfff">重新开始</a>
+			<a style="margin-left:10px;display: none;" href="javascript:void(0)"
+				class="modal-action modal-close waves-effect waves-green btn-flat op-resume start-play-2 stybgc colorfff">继续</a>
+		</div>
+	</div>
+
+
+	<div id="instruments-modal" class="modal ">
+		<div class="modal-content">
+			<div class="row">
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="instruments-wrapper">乐器</label>
+					<select id="instruments-wrapper" class="metronome-select browser-default">
+
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="fingerings-wrapper-div">
+					<label class="active" for="fingerings-wrapper">指法</label>
+					<select id="fingerings-wrapper" class="metronome-select browser-default"></select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="show-graph-div" style="display: none;">
+					<label class="active" for="show-graph">图谱</label>
+					<select id="show-graph" class="metronome-select browser-default">
+						<option value="on" selected="">显示</option>
+						<option value="off">隐藏</option>
+					</select>
+				</div>
+
+				<!-- 10.22 -->
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="svelte">改调</label>
+					<select id="svelte" class="metronome-select browser-default">
+
+					</select>
+				</div>
+				<!-- 10.22 -->
+
+				<!-- 10.25 -->
+
+				<!-- 10.25 -->
+
+
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="text-octave">升降八度</label>
+					<select id="text-octave" class="metronome-select browser-default">
+						<option value="1">升八度</option>
+						<option value="0" selected="">默认</option>
+						<option value="-1">降八度</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="cfingering">转C调</label>
+					<select id="cfingering" class="metronome-select browser-default">
+						<option value="on">开</option>
+						<option value="off" selected="">关</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="show-note-range-div">
+					<label class="active" for="show-note-range">音域</label>
+					<select id="show-note-range" class="metronome-select browser-default">
+						<option value="on">显示</option>
+						<option value="off" selected="">隐藏</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="show-bar-num">小节号</label>
+					<select id="show-bar-num" class="metronome-select browser-default">
+						<option value="on">显示</option>
+						<option value="off" selected="">隐藏</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="show-lyric-div">
+					<label class="active" for="show-lyric">歌词</label>
+					<select id="show-lyric" class="metronome-select browser-default">
+						<option value="on" selected="">显示</option>
+						<option value="off">隐藏</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="show-chord-name-div">
+					<label class="active" for="show-chord-name">和弦</label>
+					<select id="show-chord-name" class="metronome-select browser-default">
+						<option value="on">显示</option>
+						<option value="3">吉他和弦</option>
+						<option value="off">隐藏</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="show-finger-num-div">
+					<label class="active" for="show-finger-num">指号</label>
+					<select id="show-finger-num" class="metronome-select browser-default">
+						<option value="on">显示</option>
+						<option value="off" selected="">隐藏</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3">
+					<label class="active" for="sheet-scale">显示比例</label>
+					<select id="sheet-scale" class="metronome-select browser-default">
+
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="show-finger-num-div">
+					<label class="active" for="background-color">背景色</label>
+					<select id="background-color" class="metronome-select browser-default">
+						<option value="white" selected="">白色</option>
+						<option value="gray">灰色</option>
+						<option value="light_gray">浅灰色</option>
+						<option value="green">绿色</option>
+						<option value="light_green">浅绿色</option>
+						<option value="red">粉色</option>
+						<option value="light_red">浅粉色</option>
+						<option value="blue">紫色</option>
+						<option value="light_blue">浅紫色</option>
+						<option value="dark">暗黑</option>
+					</select>
+				</div>
+
+				<div class="input-field col select-div s4 m3" id="show-finger-num-div">
+					<label class="active" for="show-foot">顶部栏</label>
+					<select id="show-foot" class="metronome-select browser-default">
+						<option value="on" selected="">显示</option>
+						<option value="off">隐藏</option>
+					</select>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+	<script id="player-tpl" type="text/html">
+		<div class="accompany-item" style="display:none">
+			<div class="sm2-bar-ui compact full-width">
+
+				<div class="bd sm2-main-controls">
+
+					<div class="sm2-inline-texture"></div>
+					<div class="sm2-inline-gradient"></div>
+
+					<div class="sm2-inline-element sm2-button-element">
+						<div class="sm2-button-bd">
+							<a href="#play" class="sm2-inline-button play-pause">Play / pause</a>
+						</div>
+					</div>
+
+					<div class="sm2-inline-element sm2-inline-status">
+
+						<div class="sm2-playlist">
+							<div class="sm2-playlist-target">
+
+								<noscript>
+									<p>JavaScript is required.</p>
+								</noscript>
+							</div>
+						</div>
+
+						<div class="sm2-progress">
+							<div class="sm2-row">
+								<div class="sm2-inline-time">0:00</div>
+								<div class="sm2-progress-bd">
+									<div class="sm2-progress-track">
+										<div class="sm2-progress-bar"></div>
+										<div class="sm2-progress-ball">
+											<div class="icon-overlay"></div>
+										</div>
+									</div>
+								</div>
+								<div class="sm2-inline-duration">0:00</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="sm2-inline-element sm2-button-element sm2-volume">
+						<div class="sm2-button-bd">
+							<span class="sm2-inline-button sm2-volume-control volume-shade"></span>
+							<a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="bd sm2-playlist-drawer sm2-element">
+
+					<div class="sm2-inline-texture">
+						<div class="sm2-box-shadow"></div>
+					</div>
+
+					<!-- playlist content is mirrored here -->
+
+					<div class="sm2-playlist-wrapper">
+						<ul class="sm2-playlist-bd">
+							<li><a href="{{url}}">{{name}}</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</script>
+
+
+
+	<style>
+		.metronome-bigfont {
+			font-size: xx-large
+		}
+
+		.metronome-select {
+			margin-top: 10px;
+			background-color: #fff;
+			line-height: 1;
+			-webkit-appearance: none;
+			-moz-appearance: none
+		}
+	</style>
+
+	<div id="metronome-modal" class="modal">
+		<div class="modal-content">
+			<!--<h4>节拍器</h4>-->
+			<div class="row">
+
+				<div class="input-field col s6">
+					<label class="active" for="metronome_time_signature">拍号</label>
+					<select id="metronome_time_signature" class="metronome-select browser-default">
+						<option value="4/4" selected="">4/4</option>
+						<option value="3/4">3/4</option>
+						<option value="2/4">2/4</option>
+						<option value="3/8">3/8</option>
+						<option value="6/8">6/8</option>
+						<option value="7/8">7/8</option>
+						<option value="9/8">9/8</option>
+						<option value="12/8">12/8</option>
+					</select>
+				</div>
+
+				<div class="input-field col s6">
+					<label class="active" for="metronome_bpm">BPM</label>
+					<select id="metronome_bpm" class="metronome-select browser-default">
+
+					</select>
+				</div>
+			</div>
+
+			<p class="blue-text center-align metronome-bigfont text-darken-2" id="metronome_beat"></p>
+
+			<div class="center-align">
+				<a href="javascript:void(0)" id="metronome_play" class="waves-effect btn">开始</a>
+			</div>
+		</div>
+	</div>
+	<script id="instrument-tpl" type="text/html">
+		<option value="{{index}}" {{selected}}>{{instrumentName}}</option>
+	</script>
+
+	<script id="fingering-tpl" type="text/html">
+		<option value="{{index}}" {{if index==0}}selected{{/if}}>{{fingeringName}}</option>
+	</script>
+
+
+
+	<script type="text/javascript">
+		if (!window.localStorage.getItem('song_sheet_scale')) {
+			window.localStorage.setItem('song_sheet_scale', '9')
+		}
+		window.localStorage.setItem('song_play_metronome', 'off')
+
+
+		var context = {
+			// "guitarkey": ['C', 'Adim', 'F', 'Aaug', 'A7', 'Asus4'],
+			// "guitarnote": "G", // 新增 吉他指法初始值 10.25
+			// "guitarbd": "空", // 新增 吉他变调夹初始值 10.25
+			// , 'A7sus2', 'Bb', 'A/C#', 'Bbaug7', 'Bbmaj9', 'Bbadd9', 'Bb5', 'Baug', 'Bdim7'
+			"song_uuid": "70D2k1pAJ",
+			"song_name": "左手指月",
+			"alias_name": "《香蜜沉沉烬如霜》片尾曲",
+			"song_pinyin": "xi",
+			"song_code": "x",
+			"music_composer666": "萨顶顶",
+			"lyric_composer666": "喻江",
+			"music_composer": "萨顶顶", //歌手
+			"lyric_composer": "喻江",
+			"lyric_composerrj": "",
+			"keynote": "1=#D",
+			"rhythm": "4/4",
+			"instruments": "o3,p8",
+			"tags": "",
+			"fingerings": "o3-C,o3-F,o3-G,p8-F,p8-bE",
+			"tonalities": "o3-AC,o3-AG,o3-AF",
+			"image_url": "",
+			"music_url": "",
+			"lyric": "[\"左手握大地右/手/握着天 掌纹裂出了十方的闪/电 把时光匆匆兑换成了年 三千世 如所不见 左手拈着花右/手/舞着剑 眉间落下了一万年的///雪 一滴泪 啊///啊/啊 那是我 啊啊/啊   左手化成羽右/手/成鳞片 某世在云上某世在林/间 愿随你用一粒微尘的模样 在所有 尘世浮现 我左手拿起你右/手/放下你 合掌时你全部被收回心间 一炷香 啊///啊/啊 你是我 无二无别\",\"左手一弹指右/手/弹着弦 舟楫摆渡在忘川的水/间 当烦恼能开出一朵红莲 莫停歇 给我杂念 左手指着月右/手/取红线 赐予你和我如愿的情///缘 月光中 啊///啊/啊 你和我 啊啊/啊\"]",
+			"notation": `{bpm:120}{{ 3-{fn:3}3__2_3__|4--0_4__3__|3__4__(33__)5__6_7_6__7__5__4__|3 --}}0__3__2__3__|\n6,.0__6,__(6,__7__,)6_,(6__,7__,)5_,|3,--0__1__1__6__,|1.0__6__,2_3_5__6_.|\n3--0_3__3__|5_5_5_3_6_(6__7__)5_3_|2_6_,(1__2__3__2__)2.2__3__|\n5,.5__,3__,5_,6_,(2__3__7_,)|6,--0__3__2__3__|6,.0__6,__(6,__7,__)6,_(6,__7__,)5,_|\n3,--0__1__1__6__,|1.6,__1__2_3_5__6_.|  3--0_3_|\n5_5_ (5__3__)3_ 6_(7__6__) 5_3_| (2__6__,)6_,  (1__2__3__2__) 2.2__3__|\n5_,5_, 5_,3__,3__, 2_(2__3__)1 | 5_,5__,3__, (5_,6_,) 6, 3_(5__6__) |:6.6__5__ 6_5_ 6__7_.|\n(5__6_.)5-5_6_| 2.0__1__2_3__3__(5__6_.|3_)(3_3)-0.3_|\n5_(5__5__)(5__3__)3_ 6_(6__7__) (5_3_)| 2_6__,6__, (1__2__)(3__2__)2.2__3__\n5_,5__,3__,5_,6_, 2_(2__3__)1_1_ | 5_,5__,3__, (5_,6_,)6, 3_(5__6__):|\n\n5_,(5__,3__,)5_,6_,6,-|(3.3_33__2___3___2__1__| 2 1__2__2__1__ 2 6__,6___,6___,6__,7__,| \n1 2__2___3___2__1__ 7, 1__1__1__2__| 3-3___,3__,.6__,6__, 6__,7__,1__2__| 3--6|2--6__,6___,6___,6__,7__,|127,1|7,6,-\n)\n0__3__2__3__||| 5_,(5__,3__,) 5_,6_, 6, 3_(5__6__) | \n5_,(5__,3__,)5_,6_,(6,-|6,){{3_5_ 6 -| 7_6__3__ 5 -| 5 6__ 5__4_3_4.|5.6_7-|76--}}|||`,
+			// "notation": `{=\n{jembe}\nB_ a_ S_ a_ |\n{fn:3}B_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S_ a_ |\nB_ a_ S |||\n{\/jembe}\n%%\n{cn:C}11|{cn:C}55|{cn:F}66|{cn:C}5-v|\n{cn:F}44|{cn:C}33|{cn:G}22|{cn:C}1-v|\n{cn:C}55|{cn:F}44|{cn:C}33|{cn:G}2-v|\n{cn:C}55|{cn:F}44|{cn:C}33|{cn:G}2-v|\n{cn:C}11|{cn:C}55|{cn:F}66|{cn:C}5-v|\n{cn:F}44|{cn:C}33|{cn:G}22|{cn:C}1-v|||\n=}`,
+			"comment": "",
+			"song_type": "0",
+			"difficulty": "14",
+			"status": "1",
+			"hot": "1",
+			"delete_flag": "0",
+			"pv": "42061",
+			"author_id": "103852",
+			"admin_id": "8",
+			"created_time": "2020-08-02 21:02:16",
+			"updated_time": "2021-01-24 09:16:09",
+			"nickname": "\u3002",
+			"qq_avatar": "http:\/\/qzapp.qlogo.cn\/qzapp\/101293999\/718507DABD37421CFE6B06C4C28B141A\/30",
+			"music_list": [],
+			"comment_list": [],
+			"is_vip": false,
+			"user_id": 0
+		};
+
+
+		// 	"notation": `{{ 3-3__2_3__|4--0_4__3__|3__4__(33__)5__6_7_6__7__5__4__|3 --}}0__3__2__3__|\n6,.0__6,__(6,__7__,)6_,(6__,7__,)5_,|3,--0__1__1__6__,|1.0__6__,2_3_5__6_.|\n3--0_3__3__|5_5_5_3_6_(6__7__)5_3_|2_6_,(1__2__3__2__)2.2__3__|\n5,.5__,3__,5_,6_,(2__3__7_,)|6,--0__3__2__3__|6,.0__6,__(6,__7,__)6,_(6,__7__,)5,_|\n3,--0__1__1__6__,|1.6,__1__2_3_5__6_.|  3--0_3_|\n5_5_ (5__3__)3_ 6_(7__6__) 5_3_| (2__6__,)6_,  (1__2__3__2__) 2.2__3__|\n5_,5_, 5_,3__,3__, 2_(2__3__)1 | 5_,5__,3__, (5_,6_,) 6, 3_(5__6__) |:6.6__5__ 6_5_ 6__7_.|\n(5__6_.)5-5_6_| 2.0__1__2_3__3__(5__6_.|3_)(3_3)-0.3_|\n5_(5__5__)(5__3__)3_ 6_(6__7__) (5_3_)| 2_6__,6__, (1__2__)(3__2__)2.2__3__\n5_,5__,3__,5_,6_, 2_(2__3__)1_1_ | 5_,5__,3__, (5_,6_,)6, 3_(5__6__):|\n\n5_,(5__,3__,)5_,6_,6,-|(3.3_33__2___3___2__1__| 2 1__2__2__1__ 2 6__,6___,6___,6__,7__,| \n1 2__2___3___2__1__ 7, 1__1__1__2__| 3-3___,3__,.6__,6__, 6__,7__,1__2__| 3--6|2--6__,6___,6___,6__,7__,|127,1|7,6,-\n)\n0__3__2__3__||| 5_,(5__,3__,) 5_,6_, 6, 3_(5__6__) | \n5_,(5__,3__,)5_,6_,(6,-|6,){{3_5_ 6 -| 7_6__3__ 5 -| 5 6__ 5__4_3_4.|5.6_7-|76--}}|||`,
+
+		if (typeof UserInterfaceDark != "undefined") {
+			context['backgroud_color'] = 'dark';
+		}
+
+
+
+		window.initline = 0
+		window.svglinenum = 0 //10.26--
+		window.svgbottomlinenum = 0 //10.26--
+
+		//10.26-------
+		svglinenum = $('#linesvg').children().length
+		svgbottomlinenum = $('#linebottomsvg').children().length
+		console.log(svglinenum)
+		console.log(svgbottomlinenum)
+		if (svglinenum != 0 || svgbottomlinenum != 0 || context.guitarkey) {
+
+			document.write('<script src="./public/hexiansvg.js"><\/script>');
+
+			if (svglinenum != 0 || svgbottomlinenum != 0) {
+				function sheetLogicWidth() {
+					var e = Math.max(500, $("#sheet").width());
+					return 834 > e ? 1.2 * e : 1e3 > e ? 1e3 : e
+				}
+				var pagecalc = window.localStorage.getItem('song_sheet_scale') ? window.localStorage.getItem(
+						'song_sheet_scale') -
+					0 :
+					10
+				var width = 10 * sheetLogicWidth() / pagecalc
+				$('#linesvg').width(width - .12 * width)
+				$('#linebottomsvg').width(width - .12 * width)
+			}
+		}
+		//10.26-----
+	</script>
+
+
+
+
+
+	<script>
+		var scripturl1 = [
+			'./public/materialize.min.js',
+			'./public/template.js',
+			// './public/hc_12ab21fd543.js',
+			'./public/hc_12ab21fd54-1104.js',
+		]
+
+		var scripturl2 = [
+			'./public/jquery-ui.min.js',
+			'./public/hammer.min.js',
+			'./public/soundmanager2-nodebug-jsmin.js',
+			'./public/midi_util_efc5b92750.js',
+			'./public/midi_audio_9751856518.js',
+			'./public/song_e8ac4902d3.js',
+		]
+
+		function liadscr1() {
+			var loadcurrent = 0
+			scripturl1.forEach((element, index) => {
+				loadScriptString(element, function () {
+					loadcurrent += 1
+					if (loadcurrent == scripturl1.length) {
+						console.log('加载完成')
+						liadscr2()
+					}
+				})
+			});
+		}
+		liadscr1()
+
+		function liadscr2() {
+			var loadcurrent = 0
+			scripturl2.forEach((element, index) => {
+				loadScriptString(element, function () {
+					loadcurrent += 1
+					if (loadcurrent == scripturl2.length) {
+						console.log('加载完成')
+						// liadscr3()
+						// setfont()
+					}
+				})
+			});
+		}
+	</script>
+
+	<div class="hiddendiv common"></div>
+
+</body>
+
+
+</html>
+
+<script>
+	// var str = ["icon-home",
+	// 	"icon-newspaper",
+	// 	"icon-pencil",
+	// 	"icon-image",
+	// 	"icon-images",
+	// 	"icon-headphones",
+	// 	"icon-music",
+	// 	"icon-book",
+	// 	"icon-books",
+	// 	"icon-file-text",
+	// 	"icon-profile",
+	// 	"icon-file-empty",
+	// 	"icon-files-empty",
+	// 	"icon-file-music",
+	// 	"icon-folder",
+	// 	"icon-price-tag",
+	// 	"icon-barcode",
+	// 	"icon-qrcode",
+	// 	"icon-credit-card",
+	// 	"icon-phone",
+	// 	"icon-envelop",
+	// 	"icon-location",
+	// 	"icon-compass2",
+	// 	"icon-clock",
+	// 	"icon-bell",
+	// 	"icon-calendar",
+	// 	"icon-floppy-disk",
+	// 	"icon-bubbles",
+	// 	"icon-users",
+	// 	"icon-quotes-left",
+	// 	"icon-quotes-right",
+	// 	"icon-hour-glass",
+	// 	"icon-spinner",
+	// 	"icon-spinner11",
+	// 	"icon-search",
+	// 	"icon-zoom-in",
+	// 	"icon-zoom-out",
+	// 	"icon-enlarge",
+	// 	"icon-shrink",
+	// 	"icon-lock",
+	// 	"icon-unlocked",
+	// 	"icon-equalizer2",
+	// 	"icon-cog",
+	// 	"icon-stats-dots",
+	// 	"icon-gift",
+	// 	"icon-bin",
+	// 	"icon-list2",
+	// 	"icon-menu",
+	// 	"icon-download2",
+	// 	"icon-upload2",
+	// 	"icon-link",
+	// 	"icon-attachment",
+	// 	"icon-eye",
+	// 	"icon-eye-blocked",
+	// 	"icon-star-empty",
+	// 	"icon-star-half",
+	// 	"icon-star-full",
+	// 	"icon-heart",
+	// 	"icon-heart-broken",
+	// 	"icon-warning",
+	// 	"icon-plus",
+	// 	"icon-minus",
+	// 	"icon-cancel-circle",
+	// 	"icon-cross",
+	// 	"icon-checkmark",
+	// 	"icon-play2",
+	// 	"icon-pause",
+	// 	"icon-stop",
+	// 	"icon-play3",
+	// 	"icon-pause2",
+	// 	"icon-stop2",
+	// 	"icon-volume-high",
+	// 	"icon-volume-low",
+	// 	"icon-arrow-up2",
+	// 	"icon-arrow-right2",
+	// 	"icon-arrow-down2",
+	// 	"icon-arrow-left2",
+	// 	"icon-appleinc",
+	// 	"icon-android",
+	// 	"icon-chrome",
+	// 	"icon-firefox",
+	// 	"icon-IE",
+	// 	"icon-safari",
+	// ]
+	// dom = ""
+	// str.forEach(element => {
+	// 	dom += "<i style='color:#000;font-size:25px' class=" + element + "></i> <br />"
+	// });
+	// $('html').html($('html').html() + dom)
+
+	function setfont() {
+		const promise = fetch('./public/fonts/AlibabaPuHuiTi-2-75-SemiBoldJ.woff', {}).then(res => res.blob()).then(
+			data => {
+				return new Promise((resolve, reject) => {
+					const fr = new FileReader();
+					fr.onload = function (e) {
+						resolve(e.target.result)
+					}
+					fr.readAsDataURL(data)
+				})
+			}).then(data => {
+			const node =
+				`<defs> <style> @font-face {font-family: 'puhuiti'; font-style: normal; font-weight: regular; src: local('puhuiti'),url('${data}') format('woff2'); } </style> </defs>`;
+			$('.sheet-svg').prepend(node)
+			// $('svg').prepend(node)
+			saveImg()
+		})
+	}
+
+	function loadcallback2() {
+
+
+
+		function saveImg() {
+			//获取svg内容
+			rukou()
+
+			var svadom = document.getElementById('sheet')
+
+
+			// $('#canvas').width($('#sheet').width())
+			// $('#canvas').height($('#sheet').height())
+
+			var svg = svadom.innerHTML;
+			// var svg = 
+			var canvas = document.getElementById('canvas');
+			var c = canvas.getContext('2d');
+
+			//新建Image对象
+			var img = new Image();
+
+			//svg内容
+			img.src = 'data:image/svg+xml,' + unescape(encodeURIComponent(svg)); //svg内容中可以有中文字符
+			// img.src = 'data:image/svg+xml,' + svg;//svg内容中不能有中文字符
+
+			//svg编码成base64
+			img.src = 'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(
+				svg))); //svg内容中可以有中文字符
+			// console.log(img.src)
+			// img.src = 'data:image/svg+xml;base64,' + window.btoa(svg);//svg内容中不能有中文字符
+			//图片初始化完成后调用
+			img.onload = function () {
+				let cwidth = 0
+				let cheight = 0
+				//将canvas的宽高设置为图像的宽高
+				let windw = $(window).width();
+				let is750 = true
+				if (!is750) {
+					cwidth = 1140
+					cheight = 1611
+				} else {
+					cwidth = 750
+					cheight = 1060
+				}
+				// console.log(img.width = cwidth)
+				// console.log(img.height)
+				canvas.width = cwidth;
+				canvas.height = img.height / (img.width / cwidth);
+				// canvas.height = cheight;
+
+				//canvas画图片
+				c.fillStyle = "#ffffff";
+				c.fillRect(0, 0, cwidth, img.height / (img.width / cwidth));
+				c.drawImage(img, 0, 0, cwidth, img.height / (img.width / cwidth));
+				// var canvas = document.querySelector("#canvas");
+				var strDataURI = canvas.toDataURL("image/jpeg");
+				var image = strDataURI.replace("image/jpeg", "image/octet-stream");
+				// console.log(image)
+				var a = document.createElement('a')
+
+				// 10.12
+				allpage = 1
+				// sendPng(strDataURI)
+				// 10.12
+
+				a.href = image
+				a.download = '图片.jpg'
+				a.click()
+				// window.location.href = image;
+				//将图片添加到body中
+				// document.body.appendChild(img)
+
+			}
+		}
+		// 是否保存图片
+		// console.log(allY)
+		// saveImg()
+
+		function rukou() {
+
+			var svadom = document.getElementById('sheet')
+			$('.sheet-svg').css({
+				'backgroud-color': '#ffffff'
+			})
+			$(svadom).find('text').each(function (index, item) {
+				$(this).attr('fill', '#000000')
+			})
+
+		}
+
+		let newallY = []
+
+		// console.log($('.sheet-svg').attr('height'))
+		// $('.sheet-svg').height()
+
+		window.allY.forEach((element, index) => {
+			newallY.push({
+				y: element,
+				height: allY[index + 1] - allY[index] ? allY[index + 1] - allY[index] : $(
+					'.sheet-svg').height() - element,
+				end: element + (allY[index + 1] - allY[index] ? allY[index + 1] - allY[index] :
+					$('.sheet-svg').height() - element)
+			})
+		});
+		window.allY = newallY
+
+		// console.log(newallY)
+		// 10.12
+		var current = 0
+		var name = Date.parse(new Date())
+		var allurl = []
+		var allpage = 0
+		// 10.12
+
+		function savea4Img() {
+			//获取svg内容
+			var svadom = document.getElementById('sheet')
+			// $('#canvas').width($('#sheet').width())
+			// $('#canvas').height($('#sheet').height())
+			var svg = svadom.innerHTML;
+
+			var canvas = document.getElementById('canvas');
+			var c = canvas.getContext('2d');
+
+			//新建Image对象
+			var img = new Image();
+
+			//svg内容
+			//img.src = 'data:image/svg+xml,' + unescape(encodeURIComponent(svg)); //svg内容中可以有中文字符
+			// img.src = 'data:image/svg+xml,' + svg;//svg内容中不能有中文字符
+
+			//svg编码成base64
+			img.src = 'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(
+				svg))); //svg内容中可以有中文字符
+			// img.src = 'data:image/svg+xml;base64,' + window.btoa(svg);//svg内容中不能有中文字符
+			//图片初始化完成后调用
+			let cwidth = 0
+			let cheight = 0
+			//将canvas的宽高设置为图像的宽高
+			let windw = $('.sheet-svg').width();
+			let svgw = $('.sheet-svg').width()
+			let svgh = $('.sheet-svg').height()
+			let imgType = 1;
+
+			if (imgType == 1) {
+				cwidth = 1140
+				cheight = 1611
+			} else {
+				cwidth = 750
+				cheight = 1060
+			}
+			let calc = cwidth / windw
+			console.log(cwidth)
+			console.log(cheight)
+			console.log(svgw)
+			console.log(svgh)
+			console.log(calc)
+			// console.log(allY)
+
+
+			allY.forEach((element, index) => {
+				element.y = (element.y * calc).toFixed(2) - 0
+				element.height = (element.height * calc).toFixed(2) - 0
+				element.end = (element.end * calc).toFixed(2) - 0
+			});
+
+			let arrlength = 0
+			let newimgdata = []
+			let preheight = 0
+			let imgpadding = cheight * 0.05
+			let paddingcheight = cheight - imgpadding
+			allY.forEach((element, index) => {
+				preheight += element.height
+				console.log(preheight)
+				if (preheight < paddingcheight) {
+					if (!newimgdata[arrlength]) newimgdata[arrlength] = []
+					newimgdata[arrlength].push(element)
+				}
+				if (preheight > paddingcheight) {
+					preheight = 0
+					arrlength += 1
+					preheight += element.height
+					if (!newimgdata[arrlength]) newimgdata[arrlength] = []
+					newimgdata[arrlength].push(element)
+				}
+			});
+
+			console.log(allY)
+			console.log(newimgdata)
+
+			allpage = newimgdata.length
+
+			img.onload = function () {
+				canvas.width = cwidth
+				canvas.height = cheight
+				console.log($('#canvas').width())
+				console.log($('#canvas').height())
+
+				newimgdata.forEach((element, index) => {
+
+					let padding = 0
+					// if (index != 0) {
+					padding = imgpadding / 2
+					// }
+
+					console.log(element)
+					c.fillStyle = "#ffffff";
+					c.fillRect(0, 0, cwidth, cheight);
+					c.drawImage(img, 0, -element[0].y + padding - 2, cwidth, svgh * calc);
+
+
+					c.fillStyle = "#ffffff";
+					c.fillRect(0, 0, cwidth, padding);
+
+
+					c.fillStyle = "#ffffff";
+
+					let clearbottom = 0
+
+
+					element.forEach((element1, index1) => {
+						console.log(element1.height)
+						clearbottom += element1.height
+					});
+
+					c.fillRect(0, clearbottom + padding - 1, cwidth, 2000);
+
+					var strDataURI = canvas.toDataURL("image/jpeg");
+					var image = strDataURI.replace("image/jpeg", "image/octet-stream");
+					var a = document.createElement('a')
+					a.href = image
+
+					// sendPng(strDataURI, index)
+					a.download = name + '-' + index + '.jpg'
+
+					a.click()
+				});
+
+
+			}
+
+		}
+		// 是否保存图片
+
+		// console.log(util)
+		savea4Img()
+
+		function sendPng(base64, index) {
+
+			var imgFile = dataURLtoFile(base64)
+			var formData = new FormData();
+			formData.append("file", imgFile)
+
+			$.ajax({
+				type: 'POST',
+				url: '../upload', // 本地测试接口
+				data: formData,
+				dataType: "json",
+				processData: false, //因为data值是FormData对象，不需要对数据做处理。
+				contentType: false, //因为是由<form>表单构造的FormData对象，所以这里设置为false。
+				success: function (res) {
+					console.log('上传成功')
+					console.log(res.data.url)
+					// allurl.push(res.data.url)
+
+					index = index ? index : 0
+					allurl[index] = res.data.url
+
+					current += 1
+					console.log(current)
+					if (current == allpage) {
+						sendAllurl()
+					}
+				},
+				// complete: function () {
+				// 	// allurl.push(current)
+				// 	index = index ? index : 0
+				// 	allurl[index] = res.data.url
+
+				// 	current += 1
+				// 	console.log(current)
+				// 	if (current == allpage) {
+				// 		sendAllurl()
+				// 	}
+				// }
+			});
+		}
+
+		function dataURLtoFile(dataurl, filename = 'file') {
+			let arr = dataurl.split(',')
+			let mime = arr[0].match(/:(.*?);/)[1]
+			let suffix = mime.split('/')[1]
+			let bstr = atob(arr[1])
+			let n = bstr.length
+			let u8arr = new Uint8Array(n)
+			while (n--) {
+				u8arr[n] = bstr.charCodeAt(n)
+			}
+			return new File([u8arr], `${filename}.${suffix}`, {
+				type: mime
+			})
+		}
+
+		function sendAllurl() {
+			console.log(allurl)
+			let params = {
+				allurl: allurl.join(',')
+			}
+			$.ajax({
+				type: 'POST',
+				dataType: "json",
+				url: '../upload_cos_qupu.php', // 本地测试接口
+				data: params,
+				// processData: false, //因为data值是FormData对象，不需要对数据做处理。
+				// contentType: false, //因为是由<form>表单构造的FormData对象，所以这里设置为false。
+				success: function (res) {
+					window.location.href = 'https://www.cangqiang.com.cn/'
+					console.log('上传所有url')
+				}
+			});
+		}
+
+	}
+</script>
+<script>
+	// function loadcallback3() {
+	// 10.23合并
+	window.banben = true;
+	$('#copy-li').on("click", function () {
+		console.log('https://www.cangqiang.com.cn/bofang/' + window.location.search)
+		copyUrl('https://www.cangqiang.com.cn/bofang/' + window.location.search)
+
+		function copyUrl(id) {
+			$("body").after("<input id='copyVal'></input>");
+			var text = id;
+			var input = document.getElementById("copyVal");
+			input.value = text;
+			input.select();
+			// input.setSelectionRange(0, input.value.length);
+			document.execCommand("copy");
+			$("#copyVal").remove();
+			// alert('网址复制成功')
+			layer.open({
+				content: '网址复制成功',
+				skin: 'msg',
+				time: 2 //2秒后自动关闭
+			});
+
+		}
+	});
+
+
+	$('#back-btn').on("click", function () {
+		let menus = $('.editor-title')
+		if (menus.css('display') == 'flex') {
+			hidemenu()
+		} else {
+			$('.editor-title').css({
+				'display': 'flex'
+			})
+			$(this).toggleClass('icon-menu')
+			$(this).toggleClass('icon-cancel-circle')
+		}
+	});
+
+	function hidemenu() {
+		$('#back-btn').toggleClass('icon-menu')
+		$('#back-btn').toggleClass('icon-cancel-circle')
+
+		$('.editor-title').css({
+			'display': 'none'
+		})
+	}
+
+	$('.navuls1').click(function () {
+		console.log('返回首页')
+		hidemenu()
+		// nav1('/pages/Trueindex/Trueindex')
+	})
+	$('.navuls2').click(function () {
+		console.log('搜索更多')
+		nav('/pages/search/search')
+		hidemenu()
+	})
+	$('.navuls3').click(function () {
+		console.log('留言反馈')
+		hidemenu()
+		nav('/pages/yyly/yyly')
+	})
+
+	// alert(Date.parse(new Date()))
+
+	// $(window).scroll(function () {
+	// 	var topp = $(document).scrollTop()
+	// 	if (topp > 0) {
+	// 		$('.fixbtn').hide()
+	// 	} else {
+	// 		$('.fixbtn').show()
+	// 	}
+	// 	console.log(topp)
+	// })
+
+	$('.fixbtncha').click(function () {
+		$('.fixbtn').hide()
+		$('.morefixbtn').css({
+			"display": 'flex'
+		})
+	})
+	$('.morefixbtn').click(function () {
+		$('.fixbtn').show()
+		$('.morefixbtn').css({
+			"display": 'none'
+		})
+	})
+
+	$('.yanzou').click(function () {
+		// $('#menu-btn').click()
+		toggleMenu()
+	})
+
+	$('.daying').click(function () {
+		layer.open({
+			content: '前往图谱页面打印',
+			btn: ['去看看', '取消'],
+			yes: function (index) {
+				nav('/pages/changping/changping?id=212')
+				layer.close(index);
+			}
+		});
+	})
+	$('.tupu').click(function () {
+		nav('/pages/changping/changping?id=212')
+		// window.location.href = ''
+	})
+
+	$('.hongbao').click(function () {
+		nav('/pages/hongbao/hongbao')
+	})
+
+
+	// window.localStorage.setItem("song_play_music", 'piano')
+	var historyname = window.localStorage.getItem("song_play_music") ? window.localStorage.getItem(
+		"song_play_music") : 'piano'
+	$('#play_music').children().each(function (index, item) {
+		if (item.value == historyname) {
+			item.selected = true
+		}
+	})
+
+	function getParameterByName(paramName) {
+		var args = new Object();
+		var argsStr = location.search; //获取URL参数字符串
+		if (argsStr.length > 0) {
+			argsStr = argsStr.substring(1);
+			var nameValueArr = argsStr.split("&"); //多参数
+			for (var i = 0; i < nameValueArr.length; i++) {
+				var pos = nameValueArr[i].indexOf('=');
+				if (pos == -1) continue; //如果没有找到就跳过
+				var argName = nameValueArr[i].substring(0, pos); //提取name
+				var argVal = nameValueArr[i].substring(pos + 1); //提取value
+				args[argName] = unescape(argVal);
+			}
+			return args[paramName];
+		}
+	}
+	console.log(getParameterByName('id'))
+	let params1 = {
+		type_id: 69,
+		dopost: 'getBofang',
+		id: getParameterByName('id')
+	}
+	// $.ajax({
+	// 	type: 'GET',
+	// 	url: '/qupu_app.php', // 本地测试接口
+	// 	async: true,
+	// 	data: params1,
+	// 	success: function (result) {
+	// 		let res = JSON.parse(result)
+	// 		console.log(res.data)
+	// 		console.log(res.data)
+	// 		context = res.data
+	// 		$('title').html(res.data.info.title)
+	// 		// description
+	// 		// keywords
+	// 		allinit()
+	// 	}
+	// });
+
+	function allinit() {
+		initForDraw()
+	}
+	// 10.23合并
+	window.isvip = 1
+
+	$(document).ready(function () {
+
+		$('.xzbox').click(function (e) {
+			e.stopPropagation()
+		})
+		$('.xiazaozzc').click(function () {
+			$('.xiazaozzc').css({
+				'display': 'none'
+			})
+		})
+
+		$('.gqxz').click(function () {
+			$('.xiazaozzc').css({
+				'display': 'flex'
+			})
+
+			$('.topxz').attr('src', 'https://www.cangqiang.com/baidu_icon/downpic.jpg')
+
+			// gqxz
+			//询问框
+			// layer.open({
+			// 	content: '您不是VIP，请开通VIP'
+			// 	, btn: ['去看看']
+			// 	, yes: function (index) {
+			// 		nav('/pages/buyvip/buyvip')
+			// 		layer.close(index);
+			// 	}
+			// });
+			// nav('/pages/downimg/downimg?id=212')
+		})
+
+		$('.logos').click(function () {
+			nav1('/pages/Trueindex/Trueindex')
+			// alert(45454)
+		})
+
+		function nav1(url) {
+			window.location.href = 'https://www.cangqiang.com.cn/vipbuy.html'
+
+			// 百度小程序跳转
+			swan.webView.switchTab({
+				url: url
+			})
+			// 百度小程序跳转
+
+			// 微信小程序跳转
+			wx.miniProgram.switchTab({
+				url: url
+			})
+			// 微信小程序跳转
+
+			// uniapp跳转
+			uni.switchTab({
+				url: url
+			})
+			// uniapp跳转
+		}
+
+		window.nav1 = nav1
+
+
+		$('.xiazaibtn').click(function () {
+			nav('/pages/downimg/downimg?id=212')
+		})
+
+		function nav(url) {
+			window.location.href = 'https://www.cangqiang.com.cn/vipbuy.html'
+			// 百度小程序跳转
+			swan.webView.navigateTo({
+				url: url
+			})
+			// 百度小程序跳转
+
+			// 微信小程序跳转
+			wx.miniProgram.navigateTo({
+				url: url
+			})
+			// 微信小程序跳转
+
+			// uniapp跳转
+			uni.navigateTo({
+				url: url
+			})
+			// uniapp跳转
+		}
+		window.nav = nav
+
+
+		// 9.1
+
+		$("#show-foot").on("change", function () {
+			isshow = $(this).val(), window.localStorage.setItem("song_show_top", isshow)
+			console.log(isshow)
+			$('#header').css('display', isshow == 'on' ? 'block' : 'none')
+			console.log($("#show-note-range").val())
+			if (isshow == 'on' && $("#show-note-range").val() != 'on') {
+				$('.newbtnbox').css({
+					'top': '60px',
+					'display': 'flex'
+				})
+			} else {
+				$('.newbtnbox').css({
+					'top': '10px',
+					'display': 'none'
+				})
+			}
+		})
+
+
+		$('.btn1').click(function () {
+			console.log('ghggg')
+			$('#history').openModal()
+		})
+		$('#seljitasvg').click(function (e) {
+			console.log('ghggg')
+			e.stopPropagation()
+			$('#instruments-modal').openModal()
+		})
+
+		$('.btn2').click(function () {
+			console.log('在线编辑')
+			// uniapp跳转
+			uni.navigateTo({
+				url: '/pages/qupueditor/qupueditor'
+			})
+			// uniapp跳转
+
+			// 百度小程序跳转
+			swan.webView.navigateTo({
+				url: '/pages/qupueditor/qupueditor'
+			})
+			// 百度小程序跳转
+
+			// 微信小程序跳转
+			wx.miniProgram.navigateTo({
+				url: '/pages/qupueditor/qupueditor'
+			})
+			// 微信小程序跳转
+		})
+		// 9.1
+
+
+
+	})
+
+	// }
+</script>
+
+<style>
+	/* //10.11 */
+	/* .containers1 {
+		position: relative;
+	} */
+
+	/* //10.11 */
+</style>
+
+<script>
+	window.ishengping = 0
+	// $(function () {
+	// 	if (ishengping == 1) {
+
+	// 		$('.containers1').css({
+	// 			'width': '100vh',
+	// 			'height': '100vw',
+	// 			'transform': 'rotate(90deg) translateY(-100vw)',
+	// 			'transform-origin': '0% 0%',
+	// 			'overflow-x': 'hidden',
+	// 		})
+	// 		draw()
+	// 	}
+
+	// })
+
+	// $('.containers1').scroll(function (event) {
+	// 	initDiabg()
+	// })
+	// var initDiatimer = ''
+
+	// function initDiabg() {
+	// 	if (initDiatimer) {
+	// 		clearTimeout(initDiatimer)
+	// 		initDiatimer = false
+	// 	}
+	// 	initDiatimer = setTimeout(() => {
+	// 		$('.modal').css({
+	// 			'top': $('.containers1').scrollTop() + $(window).width() * 0.1 + 'px'
+	// 		})
+	// 		$('.lean-overlay').css({
+	// 			'height': $('#mybg').height() + 200 + 'px'
+	// 		})
+	// 	}, 500);
+	// }
+	//10.11
+</script>
+
+<script>
+
+	// window.onbeforeunload = function () {
+	// 	alert(12121212)
+	// 	$('#play-btn').click()
+	// 	return 'dd'
+	// }
+	// window.onunload = function () {
+	// 	alert(323232323)
+	// 	$('#play-btn').click()
+	// 	return 'dd'
+	// }
+</script>
